@@ -886,11 +886,11 @@ struct VolkDeviceTable
 #else
 	PFN_vkVoidFunction padding_894d85d8[9];
 #endif /* defined(VK_ARM_data_graph) */
-#if defined(VK_ARM_scheduling_controls)
+#if defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2
 	PFN_vkCmdSetDispatchParametersARM vkCmdSetDispatchParametersARM;
 #else
 	PFN_vkVoidFunction padding_4702b278[1];
-#endif /* defined(VK_ARM_scheduling_controls) */
+#endif /* defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2 */
 #if defined(VK_ARM_shader_instrumentation)
 	PFN_vkClearShaderInstrumentationMetricsARM vkClearShaderInstrumentationMetricsARM;
 	PFN_vkCmdBeginShaderInstrumentationARM vkCmdBeginShaderInstrumentationARM;
@@ -2567,9 +2567,9 @@ extern PFN_vkGetDataGraphPipelinePropertiesARM vkGetDataGraphPipelinePropertiesA
 extern PFN_vkGetDataGraphPipelineSessionBindPointRequirementsARM vkGetDataGraphPipelineSessionBindPointRequirementsARM;
 extern PFN_vkGetDataGraphPipelineSessionMemoryRequirementsARM vkGetDataGraphPipelineSessionMemoryRequirementsARM;
 #endif /* defined(VK_ARM_data_graph) */
-#if defined(VK_ARM_scheduling_controls)
+#if defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2
 extern PFN_vkCmdSetDispatchParametersARM vkCmdSetDispatchParametersARM;
-#endif /* defined(VK_ARM_scheduling_controls) */
+#endif /* defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2 */
 #if defined(VK_ARM_shader_instrumentation)
 extern PFN_vkClearShaderInstrumentationMetricsARM vkClearShaderInstrumentationMetricsARM;
 extern PFN_vkCmdBeginShaderInstrumentationARM vkCmdBeginShaderInstrumentationARM;

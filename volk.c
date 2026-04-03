@@ -748,9 +748,9 @@ static void volkGenLoadDevice(void* context, PFN_vkVoidFunction (*load)(void*, c
 	vkGetDataGraphPipelineSessionBindPointRequirementsARM = (PFN_vkGetDataGraphPipelineSessionBindPointRequirementsARM)load(context, "vkGetDataGraphPipelineSessionBindPointRequirementsARM");
 	vkGetDataGraphPipelineSessionMemoryRequirementsARM = (PFN_vkGetDataGraphPipelineSessionMemoryRequirementsARM)load(context, "vkGetDataGraphPipelineSessionMemoryRequirementsARM");
 #endif /* defined(VK_ARM_data_graph) */
-#if defined(VK_ARM_scheduling_controls)
+#if defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2
 	vkCmdSetDispatchParametersARM = (PFN_vkCmdSetDispatchParametersARM)load(context, "vkCmdSetDispatchParametersARM");
-#endif /* defined(VK_ARM_scheduling_controls) */
+#endif /* defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2 */
 #if defined(VK_ARM_shader_instrumentation)
 	vkClearShaderInstrumentationMetricsARM = (PFN_vkClearShaderInstrumentationMetricsARM)load(context, "vkClearShaderInstrumentationMetricsARM");
 	vkCmdBeginShaderInstrumentationARM = (PFN_vkCmdBeginShaderInstrumentationARM)load(context, "vkCmdBeginShaderInstrumentationARM");
@@ -2074,9 +2074,9 @@ static void volkGenLoadDeviceTable(struct VolkDeviceTable* table, void* context,
 	table->vkGetDataGraphPipelineSessionBindPointRequirementsARM = (PFN_vkGetDataGraphPipelineSessionBindPointRequirementsARM)load(context, "vkGetDataGraphPipelineSessionBindPointRequirementsARM");
 	table->vkGetDataGraphPipelineSessionMemoryRequirementsARM = (PFN_vkGetDataGraphPipelineSessionMemoryRequirementsARM)load(context, "vkGetDataGraphPipelineSessionMemoryRequirementsARM");
 #endif /* defined(VK_ARM_data_graph) */
-#if defined(VK_ARM_scheduling_controls)
+#if defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2
 	table->vkCmdSetDispatchParametersARM = (PFN_vkCmdSetDispatchParametersARM)load(context, "vkCmdSetDispatchParametersARM");
-#endif /* defined(VK_ARM_scheduling_controls) */
+#endif /* defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2 */
 #if defined(VK_ARM_shader_instrumentation)
 	table->vkClearShaderInstrumentationMetricsARM = (PFN_vkClearShaderInstrumentationMetricsARM)load(context, "vkClearShaderInstrumentationMetricsARM");
 	table->vkCmdBeginShaderInstrumentationARM = (PFN_vkCmdBeginShaderInstrumentationARM)load(context, "vkCmdBeginShaderInstrumentationARM");
@@ -3197,9 +3197,9 @@ PFN_vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM vkGetPhy
 #if defined(VK_ARM_performance_counters_by_region)
 PFN_vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM;
 #endif /* defined(VK_ARM_performance_counters_by_region) */
-#if defined(VK_ARM_scheduling_controls)
+#if defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2
 PFN_vkCmdSetDispatchParametersARM vkCmdSetDispatchParametersARM;
-#endif /* defined(VK_ARM_scheduling_controls) */
+#endif /* defined(VK_ARM_scheduling_controls) && VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION >= 2 */
 #if defined(VK_ARM_shader_instrumentation)
 PFN_vkClearShaderInstrumentationMetricsARM vkClearShaderInstrumentationMetricsARM;
 PFN_vkCmdBeginShaderInstrumentationARM vkCmdBeginShaderInstrumentationARM;
