@@ -19,7 +19,7 @@
 #endif
 
 /* VOLK_GENERATE_VERSION_DEFINE */
-#define VOLK_HEADER_VERSION 348
+#define VOLK_HEADER_VERSION 349
 /* VOLK_GENERATE_VERSION_DEFINE */
 
 #ifndef VK_NO_PROTOTYPES
@@ -278,11 +278,11 @@ struct VolkInstanceTable
 #else
 	PFN_vkVoidFunction padding_15920a35[2];
 #endif /* defined(VK_ARM_data_graph) */
-#if defined(VK_ARM_data_graph_instruction_set_tosa)
-	PFN_vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM;
+#if defined(VK_ARM_data_graph_optical_flow)
+	PFN_vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM;
 #else
-	PFN_vkVoidFunction padding_d3dcb1f3[1];
-#endif /* defined(VK_ARM_data_graph_instruction_set_tosa) */
+	PFN_vkVoidFunction padding_4da6b74b[1];
+#endif /* defined(VK_ARM_data_graph_optical_flow) */
 #if defined(VK_ARM_performance_counters_by_region)
 	PFN_vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM;
 #else
@@ -587,6 +587,11 @@ struct VolkInstanceTable
 #else
 	PFN_vkVoidFunction padding_bdcf11f9[2];
 #endif /* defined(VK_SEC_ubm_surface) */
+#if (defined(VK_ARM_data_graph_instruction_set_tosa)) || (defined(VK_ARM_data_graph_optical_flow))
+	PFN_vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM;
+#else
+	PFN_vkVoidFunction padding_d3dcb1f3[1];
+#endif /* (defined(VK_ARM_data_graph_instruction_set_tosa)) || (defined(VK_ARM_data_graph_optical_flow)) */
 #if (defined(VK_KHR_device_group) && defined(VK_KHR_surface)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1))
 	PFN_vkGetPhysicalDevicePresentRectanglesKHR vkGetPhysicalDevicePresentRectanglesKHR;
 #else
@@ -2100,9 +2105,9 @@ extern PFN_vkGetPhysicalDeviceToolProperties vkGetPhysicalDeviceToolProperties;
 extern PFN_vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM;
 extern PFN_vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM;
 #endif /* defined(VK_ARM_data_graph) */
-#if defined(VK_ARM_data_graph_instruction_set_tosa)
-extern PFN_vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM;
-#endif /* defined(VK_ARM_data_graph_instruction_set_tosa) */
+#if defined(VK_ARM_data_graph_optical_flow)
+extern PFN_vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM;
+#endif /* defined(VK_ARM_data_graph_optical_flow) */
 #if defined(VK_ARM_performance_counters_by_region)
 extern PFN_vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM;
 #endif /* defined(VK_ARM_performance_counters_by_region) */
@@ -2303,6 +2308,9 @@ extern PFN_vkGetPhysicalDeviceScreenPresentationSupportQNX vkGetPhysicalDeviceSc
 extern PFN_vkCreateUbmSurfaceSEC vkCreateUbmSurfaceSEC;
 extern PFN_vkGetPhysicalDeviceUbmPresentationSupportSEC vkGetPhysicalDeviceUbmPresentationSupportSEC;
 #endif /* defined(VK_SEC_ubm_surface) */
+#if (defined(VK_ARM_data_graph_instruction_set_tosa)) || (defined(VK_ARM_data_graph_optical_flow))
+extern PFN_vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM;
+#endif /* (defined(VK_ARM_data_graph_instruction_set_tosa)) || (defined(VK_ARM_data_graph_optical_flow)) */
 #if (defined(VK_KHR_device_group) && defined(VK_KHR_surface)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1))
 extern PFN_vkGetPhysicalDevicePresentRectanglesKHR vkGetPhysicalDevicePresentRectanglesKHR;
 #endif /* (defined(VK_KHR_device_group) && defined(VK_KHR_surface)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1)) */
