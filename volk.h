@@ -1809,7 +1809,7 @@ struct VolkDeviceTable
 #else
 	PFN_vkVoidFunction padding_4979ca14[1];
 #endif /* defined(VK_NV_fragment_shading_rate_enums) */
-#if defined(VK_NV_low_latency)
+#if defined(VK_NV_low_latency) && VK_NV_LOW_LATENCY_SPEC_VERSION >= 2
 	PFN_vkGetLatencyTimingsLegacyNV vkGetLatencyTimingsLegacyNV;
 	PFN_vkGetSleepStatusLegacyNV vkGetSleepStatusLegacyNV;
 	PFN_vkLatencySleepLegacyNV vkLatencySleepLegacyNV;
@@ -1819,7 +1819,7 @@ struct VolkDeviceTable
 	PFN_vkShutdownLatencyDeviceLegacyNV vkShutdownLatencyDeviceLegacyNV;
 #else
 	PFN_vkVoidFunction padding_f08173c[7];
-#endif /* defined(VK_NV_low_latency) */
+#endif /* defined(VK_NV_low_latency) && VK_NV_LOW_LATENCY_SPEC_VERSION >= 2 */
 #if defined(VK_NV_low_latency2)
 	PFN_vkGetLatencyTimingsNV vkGetLatencyTimingsNV;
 	PFN_vkLatencySleepNV vkLatencySleepNV;
@@ -3248,7 +3248,7 @@ extern PFN_vkGetMemoryWin32HandleNV vkGetMemoryWin32HandleNV;
 #if defined(VK_NV_fragment_shading_rate_enums)
 extern PFN_vkCmdSetFragmentShadingRateEnumNV vkCmdSetFragmentShadingRateEnumNV;
 #endif /* defined(VK_NV_fragment_shading_rate_enums) */
-#if defined(VK_NV_low_latency)
+#if defined(VK_NV_low_latency) && VK_NV_LOW_LATENCY_SPEC_VERSION >= 2
 extern PFN_vkGetLatencyTimingsLegacyNV vkGetLatencyTimingsLegacyNV;
 extern PFN_vkGetSleepStatusLegacyNV vkGetSleepStatusLegacyNV;
 extern PFN_vkLatencySleepLegacyNV vkLatencySleepLegacyNV;
@@ -3256,7 +3256,7 @@ extern PFN_vkQueueNotifyOutOfBandLegacyNV vkQueueNotifyOutOfBandLegacyNV;
 extern PFN_vkSetLatencyMarkerLegacyNV vkSetLatencyMarkerLegacyNV;
 extern PFN_vkSetLatencySleepModeLegacyNV vkSetLatencySleepModeLegacyNV;
 extern PFN_vkShutdownLatencyDeviceLegacyNV vkShutdownLatencyDeviceLegacyNV;
-#endif /* defined(VK_NV_low_latency) */
+#endif /* defined(VK_NV_low_latency) && VK_NV_LOW_LATENCY_SPEC_VERSION >= 2 */
 #if defined(VK_NV_low_latency2)
 extern PFN_vkGetLatencyTimingsNV vkGetLatencyTimingsNV;
 extern PFN_vkLatencySleepNV vkLatencySleepNV;
